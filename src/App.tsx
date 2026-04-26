@@ -117,7 +117,7 @@ const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
           <div className="w-10 h-10 bg-neon-lime flex items-center justify-center rounded-sm">
             <Car className="text-black w-6 h-6" />
           </div>
-          <span className="font-anton text-3xl font-bold tracking-tight uppercase leading-none">
+          <span className="font-anton text-3xl font-bold tracking-tight uppercase leading-tight">
             Shine From <span className="text-neon-lime">South</span>
           </span>
         </div>
@@ -180,7 +180,7 @@ const Hero = ({ onBookClick }: { onBookClick: () => void }) => {
             <span className="tagline-strip">Mobile • Licensed • Insured</span>
           </div>
 
-          <h1 className="headline-anton text-[clamp(4rem,15vw,10rem)] mb-8 leading-[0.85]">
+          <h1 className="headline-anton text-[clamp(4rem,15vw,10rem)] mb-8 leading-tight">
             SHINE ON <br />
             <span className="text-neon-lime neon-glow">ALABAMA.</span>
           </h1>
@@ -258,7 +258,7 @@ const Services = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-20">
           <div>
             <span className="text-neon-lime font-black uppercase tracking-[0.4em] text-xs mb-4 block">Luxury Auto Care</span>
-            <h2 className="text-7xl md:text-8xl headline-anton leading-none">
+            <h2 className="text-7xl md:text-8xl headline-anton leading-tight">
               PRECISION <br />
               <span className="text-white/20">SERVICES</span>
             </h2>
@@ -324,7 +324,7 @@ const ShineClub = ({ onBookClick }: { onBookClick: () => void }) => {
             <div className="inline-flex items-center gap-3 bg-black text-neon-lime px-4 py-2 font-black uppercase text-xs tracking-widest mb-8">
               <Award className="w-4 h-4" /> The Shine Club
             </div>
-            <h2 className="text-6xl md:text-8xl headline-anton mb-8 leading-[0.85]">
+            <h2 className="text-6xl md:text-8xl headline-anton mb-8 leading-tight">
               LOYALTY <br />
               GETS SHINY.
             </h2>
@@ -367,7 +367,7 @@ const InstagramFeed = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
           <div>
-            <h2 className="text-7xl headline-anton leading-none">@SHINEFROM<br /><span className="text-neon-lime">THESOUTH</span></h2>
+            <h2 className="text-7xl headline-anton leading-tight">@SHINEFROM<br /><span className="text-neon-lime">THESOUTH</span></h2>
             <p className="text-white/20 tracking-[0.5em] uppercase text-xs font-black mt-4">The Street Style Gallery</p>
           </div>
           <a href="https://www.instagram.com/_shinefromthesouth_/" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 text-white px-8 py-3 font-black uppercase text-xs tracking-widest flex items-center gap-3 hover:bg-neon-lime hover:text-black transition-all rounded-sm">
@@ -402,7 +402,7 @@ const Footer = () => {
             <div className="w-10 h-10 bg-neon-lime flex items-center justify-center rounded-sm">
               <Car className="text-black w-6 h-6" />
             </div>
-            <span className="font-anton text-2xl tracking-tighter uppercase leading-none">Shine From <span className="text-neon-lime">South</span></span>
+            <span className="font-anton text-2xl tracking-tighter uppercase leading-tight">Shine From <span className="text-neon-lime">South</span></span>
           </div>
           <p className="text-white/30 text-xs font-black uppercase tracking-[0.2em] leading-loose max-w-xs mb-10">
             Madison County's premier mobile premium detailing service. Licensed, insured, and built for performance.
