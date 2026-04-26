@@ -21,18 +21,26 @@ import {
   CheckCircle2
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import heroImg from './assets/images/hero_neon_car_1777187215447.png';
+import pressureImg from './assets/images/pressure_washing_hero_1777187240712.png';
+import ceramicImg from './assets/images/ceramic_coating_close_up_1777187264640.png';
+import gallery1 from './assets/images/gallery_1.jpg';
+import gallery2 from './assets/images/gallery_2.jpg';
+import gallery3 from './assets/images/gallery_3.jpg';
+import gallery4 from './assets/images/gallery_4.jpg';
+import gallery5 from './assets/images/gallery_5.jpg';
 
 // Images from previous generation
 const IMAGES = {
-  hero: "/src/assets/images/hero_neon_car_1777187215447.png",
-  pressure: "/src/assets/images/pressure_washing_hero_1777187240712.png",
-  ceramic: "/src/assets/images/ceramic_coating_close_up_1777187264640.png",
+  hero: heroImg,
+  pressure: pressureImg,
+  ceramic: ceramicImg,
   gallery: [
-    "/src/assets/images/gallery_1.jpg",
-    "/src/assets/images/gallery_2.jpg",
-    "/src/assets/images/gallery_3.jpg",
-    "/src/assets/images/gallery_4.jpg",
-    "/src/assets/images/gallery_5.jpg"
+    gallery1,
+    gallery2,
+    gallery3,
+    gallery4,
+    gallery5
   ]
 };
 
