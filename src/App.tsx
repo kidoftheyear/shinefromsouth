@@ -12,6 +12,7 @@ import {
   Clock,
   CreditCard,
   Instagram,
+  Facebook,
   ChevronRight,
   Menu,
   X,
@@ -369,7 +370,7 @@ const InstagramFeed = () => {
             <h2 className="text-7xl headline-anton leading-none">@SHINEFROM<br /><span className="text-neon-lime">THESOUTH</span></h2>
             <p className="text-white/20 tracking-[0.5em] uppercase text-xs font-black mt-4">The Street Style Gallery</p>
           </div>
-          <a href="https://www.instagram.com/_shinefromsouth_/" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 text-white px-8 py-3 font-black uppercase text-xs tracking-widest flex items-center gap-3 hover:bg-neon-lime hover:text-black transition-all rounded-sm">
+          <a href="https://www.instagram.com/_shinefromthesouth_/" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 text-white px-8 py-3 font-black uppercase text-xs tracking-widest flex items-center gap-3 hover:bg-neon-lime hover:text-black transition-all rounded-sm">
             <Instagram className="w-4 h-4" /> Latest Drops
           </a>
         </div>
@@ -407,10 +408,13 @@ const Footer = () => {
             Madison County's premier mobile hybrid detailing service. Licensed, insured, and built for performance.
           </p>
           <div className="flex gap-4 relative z-50">
-            <a href="https://www.instagram.com/_shinefromsouth_/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-neon-lime hover:text-black cursor-pointer transition-all rounded-sm">
+            <a href="https://www.instagram.com/_shinefromthesouth_/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-neon-lime hover:text-black cursor-pointer transition-all rounded-sm">
               <Instagram className="w-5 h-5" />
             </a>
-            <a href="https://www.google.com/maps/search/Madison+County,+AL" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-neon-lime hover:text-black cursor-pointer transition-all rounded-sm">
+            <a href="https://www.facebook.com/shinefromthesouth/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-neon-lime hover:text-black cursor-pointer transition-all rounded-sm">
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a href="https://www.google.com/maps/search/109+Tye+Lane,+Meridianville,+AL+35759" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-neon-lime hover:text-black cursor-pointer transition-all rounded-sm">
               <MapPin className="w-5 h-5" />
             </a>
           </div>
