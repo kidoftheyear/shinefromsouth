@@ -26,10 +26,72 @@ import { useState, useEffect } from 'react';
 const IMAGES = {
   hero: "/src/assets/images/hero_neon_car_1777187215447.png",
   pressure: "/src/assets/images/pressure_washing_hero_1777187240712.png",
-  ceramic: "/src/assets/images/ceramic_coating_close_up_1777187264640.png"
+  ceramic: "/src/assets/images/ceramic_coating_close_up_1777187264640.png",
+  gallery: [
+    "/src/assets/images/gallery_1.jpg",
+    "/src/assets/images/gallery_2.jpg",
+    "/src/assets/images/gallery_3.jpg",
+    "/src/assets/images/gallery_4.jpg",
+    "/src/assets/images/gallery_5.jpg"
+  ]
 };
 
-const Navbar = () => {
+const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/90 z-[100] flex flex-col items-center justify-center p-4 backdrop-blur-md"
+        >
+          <div className="bg-deep-black border-2 border-neon-lime p-8 w-full max-w-lg relative shadow-[0_0_50px_rgba(189,255,0,0.1)]">
+            <button onClick={onClose} className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors">
+              <X className="w-8 h-8" />
+            </button>
+            <h2 className="text-4xl font-anton uppercase text-white mb-8 tracking-tighter">
+              BOOK YOUR <span className="text-neon-lime">SHINE</span>
+            </h2>
+            <form action="https://formsubmit.co/shinefromsouth@gmail.com" method="POST" className="space-y-6">
+               <input type="hidden" name="_subject" value="New Booking Request - Shine South" />
+               <input type="hidden" name="_captcha" value="false" />
+               
+               <div>
+                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Full Name</label>
+                 <input type="text" name="name" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="John Doe" />
+               </div>
+               <div>
+                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Phone Number</label>
+                 <input type="tel" name="phone" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="(256) 555-5555" />
+               </div>
+               <div>
+                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Email Address</label>
+                 <input type="email" name="email" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="john@example.com" />
+               </div>
+               <div>
+                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Type of Service</label>
+                 <select name="service" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold appearance-none">
+                   <option value="Mobile Detailing">Mobile Detailing</option>
+                   <option value="Ceramic Coating">Ceramic Coating</option>
+                   <option value="Paint Correction">Paint Correction</option>
+                   <option value="House Washing">House Washing</option>
+                   <option value="Driveway Scouring">Driveway Scouring</option>
+                   <option value="Roof Soft Wash">Roof Soft Wash</option>
+                 </select>
+               </div>
+               <button type="submit" className="w-full bg-neon-lime text-black font-black py-5 uppercase tracking-tighter hover:bg-white transition-colors text-xl mt-4">
+                 Submit Request
+               </button>
+            </form>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -55,7 +117,7 @@ const Navbar = () => {
           <a href="#services" className="hover:text-neon-lime transition-colors">Services</a>
           <a href="#shine-club" className="hover:text-neon-lime transition-colors">Shine Club</a>
           <a href="#gallery" className="hover:text-neon-lime transition-colors">Gallery</a>
-          <button className="bg-neon-lime text-black px-6 py-2 rounded-sm font-black hover:bg-white transition-colors">Book Now</button>
+          <button onClick={onBookClick} className="bg-neon-lime text-black px-6 py-2 rounded-sm font-black hover:bg-white transition-colors">Book Now</button>
         </div>
 
         <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(true)}>
@@ -77,7 +139,7 @@ const Navbar = () => {
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-5xl font-anton uppercase">Services</a>
             <a href="#shine-club" onClick={() => setMobileMenuOpen(false)} className="text-5xl font-anton uppercase">Shine Club</a>
             <a href="#gallery" onClick={() => setMobileMenuOpen(false)} className="text-5xl font-anton uppercase text-neon-lime">Gallery</a>
-            <button onClick={() => setMobileMenuOpen(false)} className="bg-neon-lime text-black px-12 py-4 rounded-sm font-black text-2xl uppercase">Book Now</button>
+            <button onClick={() => { setMobileMenuOpen(false); onBookClick(); }} className="bg-neon-lime text-black px-12 py-4 rounded-sm font-black text-2xl uppercase">Book Now</button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -85,7 +147,7 @@ const Navbar = () => {
   );
 };
 
-const Hero = () => {
+const Hero = ({ onBookClick }: { onBookClick: () => void }) => {
   return (
     <section className="relative h-screen flex items-center overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
@@ -119,7 +181,7 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-neon-lime text-black px-12 py-6 rounded-sm font-black text-xl uppercase tracking-tighter flex items-center justify-center gap-2 hover:bg-white transition-colors group">
+            <button onClick={onBookClick} className="bg-neon-lime text-black px-12 py-6 rounded-sm font-black text-xl uppercase tracking-tighter flex items-center justify-center gap-2 hover:bg-white transition-colors group">
               Start Your Shine <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
             <button className="bg-transparent border-2 border-white/20 text-white px-12 py-6 rounded-sm font-black text-xl uppercase tracking-tighter hover:bg-white/10 transition-colors">
@@ -240,7 +302,7 @@ const Services = () => {
   );
 };
 
-const ShineClub = () => {
+const ShineClub = ({ onBookClick }: { onBookClick: () => void }) => {
   return (
     <section id="shine-club" className="py-24 relative overflow-hidden bg-deep-black">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -273,7 +335,7 @@ const ShineClub = () => {
                  </div>
                ))}
             </div>
-            <button className="bg-black text-neon-lime font-black px-12 py-5 rounded-sm text-xl uppercase tracking-tighter hover:bg-white hover:text-black transition-colors">
+            <button onClick={onBookClick} className="bg-black text-neon-lime font-black px-12 py-5 rounded-sm text-xl uppercase tracking-tighter hover:bg-white hover:text-black transition-colors">
               Join the Club
             </button>
           </div>
@@ -304,8 +366,8 @@ const InstagramFeed = () => {
           </button>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-          {[IMAGES.hero, IMAGES.ceramic, IMAGES.pressure, IMAGES.hero, IMAGES.pressure, IMAGES.ceramic].map((img, i) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
+          {IMAGES.gallery.map((img, i) => (
             <div key={i} className="relative aspect-square group overflow-hidden bg-soft-gray rounded-sm">
               <img src={img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100" alt="" />
               <div className="absolute inset-0 bg-neon-lime/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-black p-6">
@@ -431,31 +493,33 @@ const QuoteSection = () => {
           </div>
 
           <div className="bg-soft-gray p-10 md:p-14 rounded-sm relative shadow-2xl">
-            <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+            <form action="https://formsubmit.co/shinefromsouth@gmail.com" method="POST" className="space-y-8">
+              <input type="hidden" name="_subject" value="Quick Quote Request - Shine South" />
+              <input type="hidden" name="_captcha" value="false" />
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
                   <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-3">Your Name</label>
-                  <input type="text" className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="First & Last" />
+                  <input type="text" name="name" required className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="First & Last" />
                 </div>
                 <div>
                   <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-3">Phone Line</label>
-                  <input type="tel" className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="(256) --- ----" />
+                  <input type="tel" name="phone" required className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="(256) --- ----" />
                 </div>
               </div>
               <div>
                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-3">Service Level</label>
-                <select className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none appearance-none font-bold">
-                  <option className="bg-deep-black">HIGH PERFORMANCE DETAILING</option>
-                  <option className="bg-deep-black">HYBRID PROPERTY CARE</option>
-                  <option className="bg-deep-black">CERAMIC COATING BUNDLE</option>
-                  <option className="bg-deep-black">THE SHINE CLUB (RECURRING)</option>
+                <select name="service" required className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none appearance-none font-bold">
+                  <option value="High Performance Detailing" className="bg-deep-black">HIGH PERFORMANCE DETAILING</option>
+                  <option value="Hybrid Property Care" className="bg-deep-black">HYBRID PROPERTY CARE</option>
+                  <option value="Ceramic Coating Bundle" className="bg-deep-black">CERAMIC COATING BUNDLE</option>
+                  <option value="The Shine Club" className="bg-deep-black">THE SHINE CLUB (RECURRING)</option>
                 </select>
               </div>
               <div>
                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-3">Subject / Specs</label>
-                <textarea className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none h-24 font-bold resize-none" placeholder="Vehicle make, model, or property type..."></textarea>
+                <textarea name="details" required className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none h-24 font-bold resize-none" placeholder="Vehicle make, model, or property type..."></textarea>
               </div>
-              <button className="w-full bg-neon-lime text-black font-black py-5 rounded-sm text-xl uppercase tracking-tighter hover:bg-white transition-colors">
+              <button type="submit" className="w-full bg-neon-lime text-black font-black py-5 rounded-sm text-xl uppercase tracking-tighter hover:bg-white transition-colors">
                 Fire Request
               </button>
             </form>
@@ -467,16 +531,19 @@ const QuoteSection = () => {
 };
 
 export default function App() {
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-deep-black selection:bg-neon-lime selection:text-black">
-      <Navbar />
-      <Hero />
+      <Navbar onBookClick={() => setIsBookingModalOpen(true)} />
+      <Hero onBookClick={() => setIsBookingModalOpen(true)} />
       <Features />
       <Services />
-      <ShineClub />
+      <ShineClub onBookClick={() => setIsBookingModalOpen(true)} />
       <InstagramFeed />
       <QuoteSection />
       <Footer />
+      <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
     </div>
   );
 }
