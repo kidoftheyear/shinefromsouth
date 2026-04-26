@@ -4,16 +4,16 @@
  */
 
 import { motion, AnimatePresence } from 'motion/react';
-import { 
-  Car, 
-  Droplets, 
-  ShieldCheck, 
-  MapPin, 
-  Clock, 
-  CreditCard, 
-  Instagram, 
-  ChevronRight, 
-  Menu, 
+import {
+  Car,
+  Droplets,
+  ShieldCheck,
+  MapPin,
+  Clock,
+  CreditCard,
+  Instagram,
+  ChevronRight,
+  Menu,
   X,
   Star,
   Award,
@@ -48,7 +48,7 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
   return (
     <AnimatePresence>
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -62,35 +62,35 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
               BOOK YOUR <span className="text-neon-lime">SHINE</span>
             </h2>
             <form action="https://formsubmit.co/shinefromsouth@gmail.com" method="POST" className="space-y-6">
-               <input type="hidden" name="_subject" value="New Booking Request - Shine South" />
-               <input type="hidden" name="_captcha" value="false" />
-               
-               <div>
-                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Full Name</label>
-                 <input type="text" name="name" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="John Doe" />
-               </div>
-               <div>
-                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Phone Number</label>
-                 <input type="tel" name="phone" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="(256) 555-5555" />
-               </div>
-               <div>
-                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Email Address</label>
-                 <input type="email" name="email" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="john@example.com" />
-               </div>
-               <div>
-                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Type of Service</label>
-                 <select name="service" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold appearance-none">
-                   <option value="Mobile Detailing">Mobile Detailing</option>
-                   <option value="Ceramic Coating">Ceramic Coating</option>
-                   <option value="Paint Correction">Paint Correction</option>
-                   <option value="House Washing">House Washing</option>
-                   <option value="Driveway Scouring">Driveway Scouring</option>
-                   <option value="Roof Soft Wash">Roof Soft Wash</option>
-                 </select>
-               </div>
-               <button type="submit" className="w-full bg-neon-lime text-black font-black py-5 uppercase tracking-tighter hover:bg-white transition-colors text-xl mt-4">
-                 Submit Request
-               </button>
+              <input type="hidden" name="_subject" value="New Booking Request - Shine South" />
+              <input type="hidden" name="_captcha" value="false" />
+
+              <div>
+                <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Full Name</label>
+                <input type="text" name="name" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="John Doe" />
+              </div>
+              <div>
+                <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Phone Number</label>
+                <input type="tel" name="phone" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="(256) 555-5555" />
+              </div>
+              <div>
+                <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Email Address</label>
+                <input type="email" name="email" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold" placeholder="john@example.com" />
+              </div>
+              <div>
+                <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-2">Type of Service</label>
+                <select name="service" required className="w-full bg-black border border-white/10 p-4 text-white focus:border-neon-lime transition-colors outline-none font-bold appearance-none">
+                  <option value="Mobile Detailing">Mobile Detailing</option>
+                  <option value="Ceramic Coating">Ceramic Coating</option>
+                  <option value="Paint Correction">Paint Correction</option>
+                  <option value="House Washing">House Washing</option>
+                  <option value="Driveway Scouring">Driveway Scouring</option>
+                  <option value="Roof Soft Wash">Roof Soft Wash</option>
+                </select>
+              </div>
+              <button type="submit" className="w-full bg-neon-lime text-black font-black py-5 uppercase tracking-tighter hover:bg-white transition-colors text-xl mt-4">
+                Submit Request
+              </button>
             </form>
           </div>
         </motion.div>
@@ -135,7 +135,7 @@ const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
 
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: '100%' }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
@@ -159,9 +159,9 @@ const Hero = ({ onBookClick }: { onBookClick: () => void }) => {
   return (
     <section className="relative h-screen flex items-center overflow-hidden pt-20">
       <div className="absolute inset-0 z-0">
-        <img 
-          src={IMAGES.hero} 
-          alt="Shine From South Hero" 
+        <img
+          src={IMAGES.hero}
+          alt="Shine From South Hero"
           className="w-full h-full object-cover opacity-50 scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-black via-deep-black/60 to-transparent" />
@@ -178,16 +178,16 @@ const Hero = ({ onBookClick }: { onBookClick: () => void }) => {
           <div className="mb-12">
             <span className="tagline-strip">Mobile • Licensed • Insured</span>
           </div>
-          
+
           <h1 className="headline-anton text-[clamp(4rem,15vw,10rem)] mb-8 leading-[0.85]">
-            SHINE ON <br/>
+            SHINE ON <br />
             <span className="text-neon-lime neon-glow">ALABAMA.</span>
           </h1>
-          
+
           <p className="text-lg md:text-xl text-white/50 mb-12 max-w-xl font-semibold leading-relaxed">
             The premier high-performance mobile detailing and soft wash service serving Madison County. We bring the street-style luxury finish directly to your home or office.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4">
             <button onClick={onBookClick} className="bg-neon-lime text-black px-12 py-6 rounded-sm font-black text-xl uppercase tracking-tighter flex items-center justify-center gap-2 hover:bg-white transition-colors group">
               Start Your Shine <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
@@ -223,8 +223,8 @@ const Features = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4">
         {items.map((item, idx) => (
           <div key={idx} className="flex flex-col items-center justify-center py-10 px-6 border-r border-black/5 last:border-r-0 text-black text-center">
-             <span className="font-anton text-3xl mb-1 tracking-tighter">{item.label}</span>
-             <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-60">{item.sub}</span>
+            <span className="font-anton text-3xl mb-1 tracking-tighter">{item.label}</span>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-60">{item.sub}</span>
           </div>
         ))}
       </div>
@@ -258,19 +258,19 @@ const Services = () => {
           <div>
             <span className="text-neon-lime font-black uppercase tracking-[0.4em] text-xs mb-4 block">Hybrid Care Solutions</span>
             <h2 className="text-7xl md:text-8xl headline-anton leading-none">
-              PRECISION <br/>
+              PRECISION <br />
               <span className="text-white/20">SERVICES</span>
             </h2>
           </div>
-          
+
           <div className="grid grid-cols-2 bg-soft-gray p-1 rounded-sm">
-            <button 
+            <button
               onClick={() => setActiveTab('auto')}
               className={`px-8 py-3 font-black uppercase text-xs tracking-widest transition-all ${activeTab === 'auto' ? 'bg-neon-lime text-black' : 'text-white/40'}`}
             >
               Auto Detailing
             </button>
-            <button 
+            <button
               onClick={() => setActiveTab('washing')}
               className={`px-8 py-3 font-black uppercase text-xs tracking-widest transition-all ${activeTab === 'washing' ? 'bg-neon-lime text-black' : 'text-white/40'}`}
             >
@@ -296,10 +296,10 @@ const Services = () => {
                   <p className="text-sm text-white/40 mb-8 leading-relaxed font-semibold">{service.desc}</p>
                 </div>
                 <div className="flex justify-between items-end">
-                   <span className="text-lg font-anton text-neon-lime tracking-widest">{service.price}</span>
-                   <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-neon-lime group-hover:text-black transition-all">
-                      <ChevronRight className="w-4 h-4" />
-                   </div>
+                  <span className="text-lg font-anton text-neon-lime tracking-widest">{service.price}</span>
+                  <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-neon-lime group-hover:text-black transition-all">
+                    <ChevronRight className="w-4 h-4" />
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -324,24 +324,24 @@ const ShineClub = ({ onBookClick }: { onBookClick: () => void }) => {
               <Award className="w-4 h-4" /> The Shine Club
             </div>
             <h2 className="text-6xl md:text-8xl headline-anton mb-8 leading-[0.85]">
-              LOYALTY <br/>
+              LOYALTY <br />
               GETS SHINY.
             </h2>
             <p className="text-xl font-bold mb-10 max-w-md opacity-80">
               Unlimited maintenance for members. Join the inner circle and keep that street-style luxury finish 365 days a year.
             </p>
             <div className="grid sm:grid-cols-2 gap-4 mb-12">
-               {[
-                  "20% OFF EVERY VISIT",
-                  "PRIORITY SCHEDULING",
-                  "MEMBER GIFT BAGS",
-                  "VIP SPECIAL OFFERS"
-               ].map(perk => (
-                 <div key={perk} className="flex items-center gap-2">
-                   <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
-                   <span className="font-black uppercase text-xs tracking-wider">{perk}</span>
-                 </div>
-               ))}
+              {[
+                "20% OFF EVERY VISIT",
+                "PRIORITY SCHEDULING",
+                "MEMBER GIFT BAGS",
+                "VIP SPECIAL OFFERS"
+              ].map(perk => (
+                <div key={perk} className="flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
+                  <span className="font-black uppercase text-xs tracking-wider">{perk}</span>
+                </div>
+              ))}
             </div>
             <button onClick={onBookClick} className="bg-black text-neon-lime font-black px-12 py-5 rounded-sm text-xl uppercase tracking-tighter hover:bg-white hover:text-black transition-colors">
               Join the Club
@@ -349,10 +349,10 @@ const ShineClub = ({ onBookClick }: { onBookClick: () => void }) => {
           </div>
 
           <div className="relative z-10 w-full lg:w-1/3 aspect-square flex items-center justify-center">
-             <div className="w-full h-full border-4 border-black/10 rounded-full flex flex-col items-center justify-center">
-                <span className="text-9xl font-anton leading-none">20%</span>
-                <span className="font-black uppercase tracking-widest text-sm">Off Forever</span>
-             </div>
+            <div className="w-full h-full border-4 border-black/10 rounded-full flex flex-col items-center justify-center">
+              <span className="text-9xl font-anton leading-none">20%</span>
+              <span className="font-black uppercase tracking-widest text-sm">Off Forever</span>
+            </div>
           </div>
         </div>
       </div>
@@ -366,12 +366,12 @@ const InstagramFeed = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
           <div>
-            <h2 className="text-7xl headline-anton leading-none">@SHINEFROM<br/><span className="text-neon-lime">THESOUTH</span></h2>
+            <h2 className="text-7xl headline-anton leading-none">@SHINEFROM<br /><span className="text-neon-lime">THESOUTH</span></h2>
             <p className="text-white/20 tracking-[0.5em] uppercase text-xs font-black mt-4">The Street Style Gallery</p>
           </div>
-          <button className="bg-white/5 border border-white/10 text-white px-8 py-3 font-black uppercase text-xs tracking-widest flex items-center gap-3 hover:bg-neon-lime hover:text-black transition-all rounded-sm">
+          <a href="https://www.instagram.com/_shinefromsouth_/" target="_blank" rel="noopener noreferrer" className="bg-white/5 border border-white/10 text-white px-8 py-3 font-black uppercase text-xs tracking-widest flex items-center gap-3 hover:bg-neon-lime hover:text-black transition-all rounded-sm">
             <Instagram className="w-4 h-4" /> Latest Drops
-          </button>
+          </a>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2">
@@ -379,10 +379,10 @@ const InstagramFeed = () => {
             <div key={i} className="relative aspect-square group overflow-hidden bg-soft-gray rounded-sm">
               <img src={img} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100" alt="" />
               <div className="absolute inset-0 bg-neon-lime/80 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-black p-6">
-                 <span className="font-anton text-2xl mb-2">SHINE ON</span>
-                 <div className="flex gap-1">
-                    {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-black" />)}
-                 </div>
+                <span className="font-anton text-2xl mb-2">SHINE ON</span>
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => <Star key={i} className="w-3 h-3 fill-black" />)}
+                </div>
               </div>
             </div>
           ))}
@@ -406,50 +406,50 @@ const Footer = () => {
           <p className="text-white/30 text-xs font-black uppercase tracking-[0.2em] leading-loose max-w-xs mb-10">
             Madison County's premier mobile hybrid detailing service. Licensed, insured, and built for performance.
           </p>
-          <div className="flex gap-4">
-             <div className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-neon-lime hover:text-black cursor-pointer transition-all rounded-sm">
-               <Instagram className="w-5 h-5" />
-             </div>
-             <div className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-neon-lime hover:text-black cursor-pointer transition-all rounded-sm">
-               <MapPin className="w-5 h-5" />
-             </div>
+          <div className="flex gap-4 relative z-50">
+            <a href="https://www.instagram.com/_shinefromsouth_/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-neon-lime hover:text-black cursor-pointer transition-all rounded-sm">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="https://www.google.com/maps/search/Madison+County,+AL" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-neon-lime hover:text-black cursor-pointer transition-all rounded-sm">
+              <MapPin className="w-5 h-5" />
+            </a>
           </div>
         </div>
 
         <div>
-           <h4 className="font-black uppercase text-xs tracking-[0.4em] mb-10 text-white/20">Operational Zones</h4>
-           <ul className="space-y-4 text-sm font-black uppercase tracking-widest text-white/50">
-             <li className="hover:text-neon-lime transition-colors cursor-pointer">Huntsville, AL</li>
-             <li className="hover:text-neon-lime transition-colors cursor-pointer">Decatur, AL</li>
-             <li className="hover:text-neon-lime transition-colors cursor-pointer">Hazel Green, AL</li>
-             <li className="hover:text-neon-lime transition-colors cursor-pointer">Madison, AL</li>
-           </ul>
+          <h4 className="font-black uppercase text-xs tracking-[0.4em] mb-10 text-white/20">Operational Zones</h4>
+          <ul className="space-y-4 text-sm font-black uppercase tracking-widest text-white/50">
+            <li className="hover:text-neon-lime transition-colors cursor-pointer">Huntsville, AL</li>
+            <li className="hover:text-neon-lime transition-colors cursor-pointer">Decatur, AL</li>
+            <li className="hover:text-neon-lime transition-colors cursor-pointer">Hazel Green, AL</li>
+            <li className="hover:text-neon-lime transition-colors cursor-pointer">Madison, AL</li>
+          </ul>
         </div>
 
         <div>
-           <h4 className="font-black uppercase text-xs tracking-[0.4em] mb-10 text-white/20">Company Flow</h4>
-           <ul className="space-y-4 text-sm font-black uppercase tracking-widest text-white/50">
-             <li className="hover:text-neon-lime transition-colors cursor-pointer text-neon-lime italic">The Shine Club</li>
-             <li className="hover:text-neon-lime transition-colors cursor-pointer">Mobile Care</li>
-             <li className="hover:text-neon-lime transition-colors cursor-pointer">Paint Coating</li>
-             <li className="hover:text-neon-lime transition-colors cursor-pointer">Property Hygiene</li>
-           </ul>
+          <h4 className="font-black uppercase text-xs tracking-[0.4em] mb-10 text-white/20">Company Flow</h4>
+          <ul className="space-y-4 text-sm font-black uppercase tracking-widest text-white/50">
+            <li className="hover:text-neon-lime transition-colors cursor-pointer text-neon-lime italic">The Shine Club</li>
+            <li className="hover:text-neon-lime transition-colors cursor-pointer">Mobile Care</li>
+            <li className="hover:text-neon-lime transition-colors cursor-pointer">Paint Coating</li>
+            <li className="hover:text-neon-lime transition-colors cursor-pointer">Property Hygiene</li>
+          </ul>
         </div>
 
         <div>
-           <h4 className="font-black uppercase text-xs tracking-[0.4em] mb-10 text-white/20">Client Direct</h4>
-           <p className="text-white/50 text-xs font-black mb-10 tracking-widest leading-loose uppercase">
-             Shine South Mobile Detailing<br/>
-             Open 7 Days: 8AM — 8PM
-           </p>
-           <div className="bg-neon-lime p-6 rounded-sm">
-              <span className="text-[10px] font-black uppercase tracking-[0.4em] mb-3 block text-black/40">Secure Payments</span>
-              <div className="flex gap-4 items-center">
-                 <CreditCard className="text-black/60 w-6 h-6" />
-                 <Smartphone className="text-black/60 w-6 h-6" />
-                 <span className="text-black font-black text-[10px] uppercase tracking-widest">Apple Pay Accepted</span>
-              </div>
-           </div>
+          <h4 className="font-black uppercase text-xs tracking-[0.4em] mb-10 text-white/20">Client Direct</h4>
+          <p className="text-white/50 text-xs font-black mb-10 tracking-widest leading-loose uppercase">
+            Shine South Mobile Detailing<br />
+            Open 7 Days: 8AM — 8PM
+          </p>
+          <div className="bg-neon-lime p-6 rounded-sm">
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] mb-3 block text-black/40">Secure Payments</span>
+            <div className="flex gap-4 items-center">
+              <CreditCard className="text-black/60 w-6 h-6" />
+              <Smartphone className="text-black/60 w-6 h-6" />
+              <span className="text-black font-black text-[10px] uppercase tracking-widest">Apple Pay Accepted</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -472,7 +472,7 @@ const QuoteSection = () => {
         <div className="grid lg:grid-cols-2 gap-24 items-center">
           <div>
             <h2 className="text-7xl md:text-8xl headline-anton leading-none mb-12">
-              GET A <br/>
+              GET A <br />
               <span className="text-neon-lime neon-glow">QUICK QUOTE</span>
             </h2>
             <div className="space-y-10">
