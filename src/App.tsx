@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import heroImg from './assets/images/hero_neon_car_1777187215447.png';
-import pressureImg from './assets/images/pressure_washing_hero_1777187240712.png';
+
 import ceramicImg from './assets/images/ceramic_coating_close_up_1777187264640.png';
 import gallery1 from './assets/images/gallery_1.jpg';
 import gallery2 from './assets/images/gallery_2.jpg';
@@ -34,7 +34,7 @@ import gallery5 from './assets/images/gallery_5.jpg';
 // Images from previous generation
 const IMAGES = {
   hero: heroImg,
-  pressure: pressureImg,
+
   ceramic: ceramicImg,
   gallery: [
     gallery1,
@@ -84,9 +84,9 @@ const BookingModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
                   <option value="Mobile Detailing">Mobile Detailing</option>
                   <option value="Ceramic Coating">Ceramic Coating</option>
                   <option value="Paint Correction">Paint Correction</option>
-                  <option value="House Washing">House Washing</option>
-                  <option value="Driveway Scouring">Driveway Scouring</option>
-                  <option value="Roof Soft Wash">Roof Soft Wash</option>
+                  <option value="High-End Paint Correction">High-End Paint Correction</option>
+                  <option value="Swirl Removal">Swirl Removal</option>
+                  <option value="Interior Restoration">Interior Restoration</option>
                 </select>
               </div>
               <button type="submit" className="w-full bg-neon-lime text-black font-black py-5 uppercase tracking-tighter hover:bg-white transition-colors text-xl mt-4">
@@ -118,7 +118,7 @@ const Navbar = ({ onBookClick }: { onBookClick: () => void }) => {
             <Car className="text-black w-6 h-6" />
           </div>
           <span className="font-anton text-3xl font-bold tracking-tight uppercase leading-none">
-            Shine <span className="text-neon-lime">South</span>
+            Shine From <span className="text-neon-lime">South</span>
           </span>
         </div>
 
@@ -186,7 +186,7 @@ const Hero = ({ onBookClick }: { onBookClick: () => void }) => {
           </h1>
 
           <p className="text-lg md:text-xl text-white/50 mb-12 max-w-xl font-semibold leading-relaxed">
-            The premier high-performance mobile detailing and soft wash service serving Madison County. We bring the street-style luxury finish directly to your home or office.
+            The premier high-performance mobile detailing service serving Madison County. We bring the street-style luxury finish directly to your home or office.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
@@ -203,7 +203,7 @@ const Hero = ({ onBookClick }: { onBookClick: () => void }) => {
       <div className="absolute bottom-12 left-0 right-0 overflow-hidden pointer-events-none opacity-30">
         <div className="animate-marquee whitespace-nowrap">
           {[...Array(10)].map((_, i) => (
-            <span key={i} className="text-8xl font-anton text-transparent stroke-1 stroke-white/40 uppercase px-8">WE COME TO YOU • SHINE SOUTH • MOBILE DETAILING • MADISON COUNTY •</span>
+            <span key={i} className="text-8xl font-anton text-transparent stroke-1 stroke-white/40 uppercase px-8">WE COME TO YOU • SHINE FROM SOUTH • MOBILE DETAILING • MADISON COUNTY •</span>
           ))}
         </div>
       </div>
@@ -215,7 +215,7 @@ const Features = () => {
   const items = [
     { icon: <Clock />, label: "7 DAYS A WEEK", sub: "8:00 AM — 8:00 PM" },
     { icon: <MapPin />, label: "WE COME TO YOU", sub: "MADISON • HUNTSVILLE • DECATUR" },
-    { icon: <ShieldCheck />, label: "LICENSED", sub: "TOTAL PROPERTY CARE" },
+    { icon: <ShieldCheck />, label: "LICENSED", sub: "TOTAL VEHICLE CARE" },
     { icon: <Smartphone />, label: "PAY EASY", sub: "APPLE PAY • CASHAPP • CARDS" },
   ];
 
@@ -234,7 +234,7 @@ const Features = () => {
 };
 
 const Services = () => {
-  const [activeTab, setActiveTab] = useState<'auto' | 'washing'>('auto');
+  const [activeTab, setActiveTab] = useState<'auto' | 'specialty'>('auto');
 
   const detailing = [
     { id: "01", title: "Mobile Detailing", desc: "Precision interior and exterior care for those who demand showroom perfection anywhere.", price: "From $150" },
@@ -243,21 +243,21 @@ const Services = () => {
     { id: "04", title: "Fleet Services", desc: "Professional maintenance for company trucks and utility vehicles across North Alabama.", price: "Contract Rates" },
   ];
 
-  const washing = [
-    { id: "01", title: "House Washing", desc: "Gentle soft wash for home siding. Removes mold, algae, and grime safely.", price: "From $250" },
-    { id: "02", title: "Driveway Scouring", desc: "High-pressure concrete restoration for driveways, sidewalks, and patios.", price: "From $100" },
-    { id: "03", title: "Roof Soft Wash", desc: "Non-pressure chemical treatment to eliminate black streaks and organic growth.", price: "Quote Only" },
-    { id: "04", title: "Commercial Power", desc: "Heavy-duty cleaning for storefronts, parking lots, and industrial surfaces.", price: "From $150" },
+  const specialty = [
+    { id: "01", title: "High-End Paint Correction", desc: "Multi-stage machine polishing to restore your vehicle's clear coat to flawless perfection.", price: "From $350" },
+    { id: "02", title: "Swirl Removal", desc: "Elimination of fine scratches, swirl marks, and oxidation for a brilliant finish.", price: "From $200" },
+    { id: "03", title: "Interior Restoration", desc: "Deep extraction, leather conditioning, and comprehensive cabin sanitization.", price: "From $150" },
+    { id: "04", title: "Engine Bay Detailing", desc: "Safe, thorough degreasing and dressing of all engine components.", price: "From $75" },
   ];
 
-  const currentServices = activeTab === 'auto' ? detailing : washing;
+  const currentServices = activeTab === 'auto' ? detailing : specialty;
 
   return (
     <section id="services" className="py-24 bg-deep-black border-b border-soft-gray">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-20">
           <div>
-            <span className="text-neon-lime font-black uppercase tracking-[0.4em] text-xs mb-4 block">Hybrid Care Solutions</span>
+            <span className="text-neon-lime font-black uppercase tracking-[0.4em] text-xs mb-4 block">Luxury Auto Care</span>
             <h2 className="text-7xl md:text-8xl headline-anton leading-none">
               PRECISION <br />
               <span className="text-white/20">SERVICES</span>
@@ -272,10 +272,10 @@ const Services = () => {
               Auto Detailing
             </button>
             <button
-              onClick={() => setActiveTab('washing')}
-              className={`px-8 py-3 font-black uppercase text-xs tracking-widest transition-all ${activeTab === 'washing' ? 'bg-neon-lime text-black' : 'text-white/40'}`}
+              onClick={() => setActiveTab('specialty')}
+              className={`px-8 py-3 font-black uppercase text-xs tracking-widest transition-all ${activeTab === 'specialty' ? 'bg-neon-lime text-black' : 'text-white/40'}`}
             >
-              Pressure Washing
+              Specialty Services
             </button>
           </div>
         </div>
@@ -402,10 +402,10 @@ const Footer = () => {
             <div className="w-10 h-10 bg-neon-lime flex items-center justify-center rounded-sm">
               <Car className="text-black w-6 h-6" />
             </div>
-            <span className="font-anton text-2xl tracking-tighter uppercase leading-none">Shine <span className="text-neon-lime">South</span></span>
+            <span className="font-anton text-2xl tracking-tighter uppercase leading-none">Shine From <span className="text-neon-lime">South</span></span>
           </div>
           <p className="text-white/30 text-xs font-black uppercase tracking-[0.2em] leading-loose max-w-xs mb-10">
-            Madison County's premier mobile hybrid detailing service. Licensed, insured, and built for performance.
+            Madison County's premier mobile premium detailing service. Licensed, insured, and built for performance.
           </p>
           <div className="flex gap-4 relative z-50">
             <a href="https://www.instagram.com/_shinefromthesouth_/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 border border-white/10 flex items-center justify-center hover:bg-neon-lime hover:text-black cursor-pointer transition-all rounded-sm">
@@ -436,14 +436,14 @@ const Footer = () => {
             <li className="hover:text-neon-lime transition-colors cursor-pointer text-neon-lime italic">The Shine Club</li>
             <li className="hover:text-neon-lime transition-colors cursor-pointer">Mobile Care</li>
             <li className="hover:text-neon-lime transition-colors cursor-pointer">Paint Coating</li>
-            <li className="hover:text-neon-lime transition-colors cursor-pointer">Property Hygiene</li>
+            <li className="hover:text-neon-lime transition-colors cursor-pointer">Swirl Removal</li>
           </ul>
         </div>
 
         <div>
           <h4 className="font-black uppercase text-xs tracking-[0.4em] mb-10 text-white/20">Client Direct</h4>
           <p className="text-white/50 text-xs font-black mb-10 tracking-widest leading-loose uppercase">
-            Shine South Mobile Detailing<br />
+            Shine From South Mobile Detailing<br />
             Open 7 Days: 8AM — 8PM
           </p>
           <div className="bg-neon-lime p-6 rounded-sm">
@@ -484,7 +484,7 @@ const QuoteSection = () => {
                 <span className="font-anton text-3xl text-neon-lime opacity-30 leading-none">01</span>
                 <div>
                   <h4 className="font-black uppercase text-lg tracking-tight mb-2">Select Your Package</h4>
-                  <p className="text-white/40 text-sm font-semibold max-w-xs">Pick the precision detailing or hybrid washing service you need.</p>
+                  <p className="text-white/40 text-sm font-semibold max-w-xs">Pick the precision detailing or paint correction service you need.</p>
                 </div>
               </div>
               <div className="flex gap-6">
@@ -522,14 +522,14 @@ const QuoteSection = () => {
                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-3">Service Level</label>
                 <select name="service" required className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none appearance-none font-bold">
                   <option value="High Performance Detailing" className="bg-deep-black">HIGH PERFORMANCE DETAILING</option>
-                  <option value="Hybrid Property Care" className="bg-deep-black">HYBRID PROPERTY CARE</option>
+                  <option value="Advanced Paint Correction" className="bg-deep-black">ADVANCED PAINT CORRECTION</option>
                   <option value="Ceramic Coating Bundle" className="bg-deep-black">CERAMIC COATING BUNDLE</option>
                   <option value="The Shine Club" className="bg-deep-black">THE SHINE CLUB (RECURRING)</option>
                 </select>
               </div>
               <div>
                 <label className="block text-white/40 text-[10px] font-black uppercase tracking-[0.3em] mb-3">Subject / Specs</label>
-                <textarea name="details" required className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none h-24 font-bold resize-none" placeholder="Vehicle make, model, or property type..."></textarea>
+                <textarea name="details" required className="w-full bg-deep-black border-b-2 border-white/10 py-3 text-white focus:border-neon-lime transition-colors outline-none h-24 font-bold resize-none" placeholder="Vehicle make, model, or detailing needs..."></textarea>
               </div>
               <button type="submit" className="w-full bg-neon-lime text-black font-black py-5 rounded-sm text-xl uppercase tracking-tighter hover:bg-white transition-colors">
                 Fire Request
